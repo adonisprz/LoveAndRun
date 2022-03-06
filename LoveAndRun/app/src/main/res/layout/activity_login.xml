@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
+    android:padding="10dp"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="center"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/SignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ImageView"
+        android:layout_marginTop="35dp"
+        android:fontFamily="casual"
+        android:text="Sign In"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/HiThere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SignIn"
+        android:layout_marginTop="15dp"
+        android:fontFamily="casual"
+        android:text="Hi there! Nice to see you again"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/usernameLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/HiThere"
+        android:textSize="25dp">
+    </EditText>
+
+    <EditText
+        android:id="@+id/passwordLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usernameLogin"
+        android:layout_marginTop="20dp"
+        android:hint="Password"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordLogin"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/btnNeedAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Need an account?"
+        android:textAllCaps="false"
+        android:layout_below="@+id/btnLogin"
+        android:backgroundTint="@android:color/white"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:layout_marginTop="30dp"/>
+
+
+
+</RelativeLayout>
