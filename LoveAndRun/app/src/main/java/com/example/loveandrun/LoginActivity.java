@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Please enter the Credentials.", Toast.LENGTH_SHORT).show();
                 } else {
                     Boolean result = myDB.checkUsernamePassword(user, pass);
-                    if (result==true){
+                    if (result){
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                         intent.putExtra("username",username.getText().toString());
                         startActivity(intent);

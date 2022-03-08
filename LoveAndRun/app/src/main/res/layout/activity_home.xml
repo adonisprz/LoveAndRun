@@ -26,4 +26,17 @@
         android:gravity="center"
         android:layout_below="@id/Welcome"/>
 
+    <Button
+        android:id="@+id/mapsbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to the map"
+        android:textAllCaps="false"
+        android:layout_below="@id/txt_usernameDisplay"
+        android:textSize="25dp"
+        android:layout_marginTop="25dp"
+        />
+
+
+
 </RelativeLayout>
