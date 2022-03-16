@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText username, password, repassword;
+    EditText username, email, password, repassword;
     Button btnSignUp, btnSignIn;
     DBHelper myDB;
 
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         username = findViewById(R.id.username);
+        email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         repassword = findViewById(R.id.password);
 
@@ -34,10 +35,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String user = username.getText().toString();
+                String mail = email.getText().toString();
                 String pass = password.getText().toString();
                 String repass = repassword.getText().toString();
 
-                if(user.equals("") || pass.equals("") || repass.equals("")){
+                if(user.equals("") || pass.equals("") || repass.equals("") || mail.equals("")){
 
                     Toast.makeText(MainActivity.this, "Fill all the fields", Toast.LENGTH_SHORT).show();
 
@@ -47,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
                         Boolean usercheckResult = myDB.checkUserName(user);
 
-                        if (!usercheckResult){
+                        if (!usercheckResult ){
 
-                            Boolean regResult = myDB.insertData(user, pass);
+                            Boolean regResult = myDB.insertData(user, pass, mail);
 
                             if (regResult) {
 

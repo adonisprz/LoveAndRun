@@ -15,7 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase myDB) {
-        myDB.execSQL("create Table users(username Text primary key, password Text)");
+        myDB.execSQL("create Table users(username Text primary key, mail Text, password Text)");
     }
 
     @Override
@@ -23,10 +23,11 @@ public class DBHelper extends SQLiteOpenHelper {
         myDB.execSQL("drop Table if exists user");
     }
 
-    public Boolean insertData(String username, String password) {
+    public Boolean insertData(String username, String password, String mail) {
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
+        contentValues.put("mail", mail);
         contentValues.put("password", password);
         long result = myDB.insert("users", null, contentValues);
         if (result == -1) {
@@ -35,6 +36,9 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+
+
+
 
     public Boolean checkUserName(String username) {
         SQLiteDatabase myDB = this.getWritableDatabase();
@@ -45,6 +49,9 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+
+
+
     public Boolean checkUsernamePassword(String username, String password){
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor coursor = myDB.rawQuery("select * from users where username = ? and password =?", new String[]{username, password});
